@@ -1,0 +1,168 @@
+% Academic CV — Mohammad Sarhangzadeh
+% Compile using XeLaTeX (Overleaf: Settings -> Compiler -> XeLaTeX)
+\documentclass[10pt,a4paper]{article}
+
+\usepackage[a4paper,left=0.62in,right=0.62in,top=0.62in,bottom=0.57in]{geometry}
+\usepackage{fontspec}
+\setmainfont{Tinos}[Ligatures=TeX]
+\usepackage{microtype}
+\usepackage{fontawesome5}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{needspace}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+
+\hypersetup{pdfauthor={Mohammad Sarhangzadeh},pdftitle={Mohammad Sarhangzadeh - Academic CV}}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancyfoot[R]{\footnotesize\thepage}
+\setlength{\footskip}{16pt}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlength{\emergencystretch}{2em}
+\raggedbottom
+
+\titleformat{\section}{\normalfont\bfseries\fontsize{12}{14}\selectfont}{}{0pt}{}[\vspace{-5pt}\titlerule]
+\titlespacing*{\section}{0pt}{20pt}{10pt}
+
+% Plain black-and-white oral designation; publication titles remain unlinked.
+\newcommand{\oral}{\begingroup\setlength{\fboxsep}{2.5pt}\fbox{\fontsize{8}{9}\selectfont\bfseries ORAL}\endgroup}
+\newcommand{\publication}[4]{%
+  \Needspace{4.2\baselineskip}%
+  {\bfseries #1}\par\vspace{2pt}
+  #2\par\vspace{2pt}
+  \textit{#3}%
+  \if\relax\detokenize{#4}\relax\else\hfill #4\fi
+  \par\vspace{18pt}%
+}
+\newcommand{\researchtopic}[2]{%
+  \Needspace{3.5\baselineskip}%
+  \textbf{#1}\par\vspace{3pt}
+  #2\par\vspace{16pt}%
+}
+\newcommand{\workitem}[2]{%
+  \Needspace{4\baselineskip}%
+  \textbf{#1} #2\par\vspace{16pt}%
+}
+\begin{document}
+\fontsize{10.4}{13.5}\selectfont
+
+% ===============================================================
+% Header
+% ===============================================================
+\begin{center}
+  {\fontsize{24}{27}\selectfont\bfseries Mohammad Sarhangzadeh}\par\vspace{7pt}
+  {\fontsize{9.0}{11}\selectfont
+    \mbox{\faMapMarker*\enspace Ankara, T\"urkiye\quad
+    \faEnvelope\enspace\href{mailto:m.sarhangzadeh@bilkent.edu.tr}{m.sarhangzadeh@bilkent.edu.tr}\quad
+    \faGithub\enspace\href{https://github.com/MSarhangzadeh}{GitHub}\quad
+    \faGlobe\enspace\href{https://msarhangzadeh.github.io/}{msarhangzadeh}}
+  }
+\end{center}
+\vspace{2pt}
+
+\section*{Research Interests}
+\vspace{2pt}
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}p{0.31\textwidth}p{0.31\textwidth}p{0.31\textwidth}@{}}
+\textbullet\enspace Computer Vision &
+\textbullet\enspace Medical Image Analysis &
+\textbullet\enspace Generative Modeling \\[5pt]
+\textbullet\enspace Uncertainty Quantification &
+\textbullet\enspace Motion Analysis &
+\textbullet\enspace Topological Learning
+\end{tabular*}
+
+\section*{Education}
+\textbf{Bilkent University}\hfill Ankara, T\"urkiye\par
+M.Sc. in Computer Engineering\hfill\textit{Sep 2025--Present}\par\vspace{2pt}
+\textit{Fully funded M.Sc. program}\par\vspace{2pt}
+Supervisor: Dr. Doruk \"Oner\par\vspace{10pt}
+\textbf{University of Tabriz}\hfill Tabriz, Iran\par
+B.Sc. in Computer Engineering\hfill\textit{2020--2025}\par
+
+\section*{Publications}
+\publication
+  {Stochastic Nonlinearities Improve Uncertainty Estimation}
+  {Mohammad Sarhangzadeh, Amirreza M. Shebly, Doruk \"Oner}
+  {British Machine Vision Conference (BMVC), 2026}
+  {}
+\publication
+  {Direction-Aware Kinematics-Conditioned Graph Hypernetwork for Human Trajectory Prediction}
+  {Amirreza M. Shebly, Mohammad Sarhangzadeh, Doruk \"Oner}
+  {Asian Conference on Computer Vision (ACCV), 2026}
+  {\oral}
+\publication
+  {DINO-Nucleus: Multi-Level Self-Supervised Features for Nucleus Instance Segmentation}
+  {Mohammad Sarhangzadeh, Elyar Esmaeilzadeh, Doruk \"Oner}
+  {International Conference on Medical Imaging and Computer-Aided Diagnosis (MICAD), 2026}
+  {}
+\publication
+  {OMCDE: Opposition-based Multi-Stage Matrix-Based Competitive Differential Evolution}
+  {Mohammad Sarhangzadeh, Shahryar Rahnamayan, Doruk \"Oner}
+  {IEEE Congress on Evolutionary Computation (CEC), WCCI 2026}
+  {\oral}
+
+\vspace{-4pt}
+\section*{Ongoing Research}
+\researchtopic
+  {Topology-Aware Uncertainty Estimation for Structured Segmentation}
+  {Studying uncertainty in the connectivity and topology of segmented structures, with an emphasis on detecting structural failures that conventional pixel-level confidence estimates may miss. Investigating uncertainty-aware learning and evaluation for curvilinear structures.}
+\researchtopic
+  {Diffusion-Based Tilt-Series Extrapolation for Limited-Angle Tomography}
+  {Investigating diffusion-based generation of unobserved projection views from sparsely sampled tilt series to extend the effective angular range of tomography. Exploring measurement fidelity, cross-view and cycle consistency, Fourier-domain constraints, and preservation of reconstructed 3D structure.}
+
+% ===============================================================
+% Second page: research contributions and academic service
+% ===============================================================
+\newpage
+\section*{Research Experience}
+
+\textbf{NeuraVision Lab, Bilkent University}\hfill Ankara, T\"urkiye\par
+\textit{Graduate Researcher}\hfill\textit{Current}\par\vspace{12pt}
+
+\workitem
+  {Stochastic activation methods for uncertainty quantification (BMVC 2026).}
+  {Developed a single-model approach that introduces stochasticity through nonlinear activation functions, enabling repeated predictive samples without maintaining multiple separately trained models. Investigated how activation trajectories support uncertainty and calibration, and evaluated the approach on image classification, segmentation, out-of-distribution detection, and input corruption.}
+
+\workitem
+  {Direction-aware trajectory forecasting (ACCV 2026).}
+  {Investigated how agents' motion and relative direction should influence interaction modeling in crowded environments. Contributed to a kinematics-conditioned graph hypernetwork that adapts message passing to directional relationships, with an emphasis on learning useful interactions for multimodal human-trajectory prediction.}
+
+\workitem
+  {Self-supervised medical instance segmentation (MICAD 2026).}
+  {Developed DINO-Nucleus, combining hierarchical self-supervised visual representations with multi-level feature fusion for nucleus instance segmentation. Explored parameter-efficient adaptation and complementary training objectives to distinguish closely packed nuclei while limiting the number of trainable parameters.}
+
+\workitem
+  {Competitive differential evolution (WCCI 2026).}
+  {Developed OMCDE, a matrix-vectorized population optimizer that combines opposition-based initialization, fitness-ranked triplet competition, adaptive mutation and crossover parameters, and a staged shift from exploration to exploitation. Studied numerical optimization behavior on continuous benchmark functions.}
+
+\vspace{2pt}
+\textbf{Applied Deep Learning Lab, University of Tabriz}\hfill Tabriz, Iran\par
+\textit{Undergraduate Research Assistant}\par\vspace{12pt}
+
+\workitem
+  {Medical image analysis.}
+  {Conducted research on deep learning for volumetric brain-tumor segmentation and pediatric kidney-tumor classification from MRI. Worked with U-Net-based segmentation and VAE-derived latent representations to investigate accurate, computationally efficient medical-image models.}
+
+\workitem
+  {Pose-guided sign-language video generation.}
+  {Led research and model development for generating sign-language videos conditioned on pose sequences. The initial stage focused on synthesizing video directly from sign-language pose information; subsequent work explored fine-tuning diffusion-based video models and maintaining visual and temporal consistency.}
+
+\section*{Intellectual Property}
+\textbf{Invention Disclosure / Potential Patent Protection}\hfill\textit{Ongoing}\par\vspace{3pt}
+Amirreza M. Shebly, Mohammad Sarhangzadeh, Doruk \"Oner\par\vspace{3pt}
+Invention disclosure under institutional evaluation for potential patent protection of research conducted within a T\"UB\.{I}TAK B\.{I}LGEM-funded project.\par
+
+\section*{Teaching Experience}
+\textbf{Bilkent University}\hfill\textit{Teaching Assistant}\par\vspace{3pt}
+Python Programming, Digital Design, Generative Networks\par\vspace{10pt}
+\textbf{University of Tabriz}\hfill\textit{Teaching Assistant}\par\vspace{3pt}
+Data Structures, Logical Circuits\par
+
+\section*{Languages}
+English (IELTS Academic: 7.5) \quad $\cdot$ \quad Turkish (native) \quad $\cdot$ \quad Persian (native)
+
+\end{document}
