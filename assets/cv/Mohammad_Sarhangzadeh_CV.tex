@@ -12,40 +12,58 @@
 \usepackage{needspace}
 \usepackage[hidelinks]{hyperref}
 \usepackage{fancyhdr}
+\usepackage{xcolor}
+\definecolor{cvblue}{HTML}{315B7D}
+\definecolor{cvink}{HTML}{202830}
+\definecolor{cvmuted}{HTML}{596572}
+\definecolor{cvline}{HTML}{CFD9E1}
+\definecolor{cvpaleblue}{HTML}{EDF4F9}
+\color{cvink}
 
 \hypersetup{pdfauthor={Mohammad Sarhangzadeh},pdftitle={Mohammad Sarhangzadeh - Academic CV}}
 \pagestyle{fancy}
 \fancyhf{}
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
-\fancyfoot[R]{\footnotesize\thepage}
+\fancyfoot[R]{{\footnotesize\color{cvmuted}\thepage}}
 \setlength{\footskip}{16pt}
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{0pt}
 \setlength{\emergencystretch}{2em}
 \raggedbottom
 
-\titleformat{\section}{\normalfont\bfseries\fontsize{12}{14}\selectfont}{}{0pt}{}[\vspace{-5pt}\titlerule]
-\titlespacing*{\section}{0pt}{20pt}{10pt}
+% Divider sits safely *below* each heading, never through the text.
+\titleformat{\section}
+  {\normalfont\bfseries\color{cvblue}\fontsize{12}{15}\selectfont}
+  {}{0pt}{}
+  [\vspace{4pt}{\color{cvline}\titlerule[0.45pt]}]
+\titlespacing*{\section}{0pt}{16pt}{9pt}
 
 % Plain black-and-white oral designation; publication titles remain unlinked.
-\newcommand{\oral}{\begingroup\setlength{\fboxsep}{2.5pt}\fbox{\fontsize{8}{9}\selectfont\bfseries ORAL}\endgroup}
+\newcommand{\oral}{%
+  \begingroup
+  \setlength{\fboxsep}{3pt}%
+  \fcolorbox{cvline}{cvpaleblue}{%
+    \textcolor{cvblue}{\fontsize{8}{9}\selectfont\bfseries ORAL}%
+  }%
+  \endgroup
+}
 \newcommand{\publication}[4]{%
   \Needspace{4.2\baselineskip}%
   {\bfseries #1}\par\vspace{2pt}
   #2\par\vspace{2pt}
-  \textit{#3}%
+  {\color{cvmuted}\itshape #3}%
   \if\relax\detokenize{#4}\relax\else\hfill #4\fi
   \par\vspace{18pt}%
 }
 \newcommand{\researchtopic}[2]{%
   \Needspace{3.5\baselineskip}%
-  \textbf{#1}\par\vspace{3pt}
+  {\color{cvink}\textbf{#1}}\par\vspace{3pt}
   #2\par\vspace{16pt}%
 }
 \newcommand{\workitem}[2]{%
   \Needspace{4\baselineskip}%
-  \textbf{#1} #2\par\vspace{16pt}%
+  \textbf{#1} #2\par\vspace{12pt}%
 }
 \begin{document}
 \fontsize{10.4}{13.5}\selectfont
@@ -54,12 +72,12 @@
 % Header
 % ===============================================================
 \begin{center}
-  {\fontsize{24}{27}\selectfont\bfseries Mohammad Sarhangzadeh}\par\vspace{7pt}
+  {\fontsize{24}{27}\selectfont\bfseries\color{cvink} Mohammad Sarhangzadeh}\par\vspace{7pt}
   {\fontsize{9.0}{11}\selectfont
     \mbox{\faMapMarker*\enspace Ankara, T\"urkiye\quad
     \faEnvelope\enspace\href{mailto:m.sarhangzadeh@bilkent.edu.tr}{m.sarhangzadeh@bilkent.edu.tr}\quad
     \faGithub\enspace\href{https://github.com/MSarhangzadeh}{GitHub}\quad
-    \faGlobe\enspace\href{https://msarhangzadeh.github.io/}{msarhangzadeh}}
+    \faGlobe\enspace\href{https://msarhangzadeh.github.io/}{\textcolor{cvblue}{msarhangzadeh}}}
   }
 \end{center}
 \vspace{2pt}
@@ -78,7 +96,7 @@
 \section*{Education}
 \textbf{Bilkent University}\hfill Ankara, T\"urkiye\par
 M.Sc. in Computer Engineering\hfill\textit{Sep 2025--Present}\par\vspace{2pt}
-\textit{Fully funded M.Sc. program}\par\vspace{2pt}
+{\color{cvblue}\itshape Fully funded M.Sc. program}\par\vspace{2pt}
 Supervisor: Dr. Doruk \"Oner\par\vspace{10pt}
 \textbf{University of Tabriz}\hfill Tabriz, Iran\par
 B.Sc. in Computer Engineering\hfill\textit{2020--2025}\par
